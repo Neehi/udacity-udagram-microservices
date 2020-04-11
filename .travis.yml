@@ -17,3 +17,10 @@ before_install:
 
 install:
   - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel 
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bash ./scripts/docker_push.sh
+  on:
+    branch: master
