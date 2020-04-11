@@ -41,14 +41,19 @@ The following settings are required by the application:
 - POSTGRESS_USERNAME - Database username
 - URL - Application URL
 
-### Setup Docker Environment
+###  Docker Environment
 
-You'll need to install docker https://docs.docker.com/install/. Open a new terminal within the project directory and run:
+Open a new terminal within the project directory and run:
+1. Build the images: `docker-compose -f docker-compose-build.yaml build --parallel`
+2. Push the images: `docker-compose -f docker-compose-build.yaml push`
+3. Start the containers: `docker-compose up`
 
-Build the images: docker-compose -f docker-compose-build.yaml build --parallel
-Push the images: docker-compose -f docker-compose-build.yaml push
-Run the container: docker-compose up
+### Kubernetes Environment
 
+1. Setup secret keys and configmaps (aws-secret, env-secret, env-configmap)
+2. Apply secret keys and configmap: `kubectl apply -f aws-secret.yaml -f env-secret.yaml -f env-configmap.yaml`
+3. Apply deployments: `kubectl apply -f backend-feed-deployment.yaml -f backend-user-deployment.yaml -f frontend-deployment.yaml -f reverseproxy-deployment.yaml`
+4. Apply services: `kubectl apply -f backend-feed-service.yaml -f backend-user-service.yaml -f frontend-service.yaml -f reverseproxy-Service.yaml`
 
 ## Acknowledgements
 
