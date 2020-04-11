@@ -20,6 +20,10 @@ Instructions for installing Docker can be found [here](https://docs.docker.com/i
 
 It is recommended to use kubectl for managing the Kubernetes cluster. Intructions for installing kubectl can be found [here](https://kubernetes.io/docs/tasks/tools/install-kubectl).
 
+### Travis CI
+
+Instructopms for installing Travis CI with a GitHub repository can be found [here](https://docs.travis-ci.com/user/tutorial/).
+
 ## Dependencies
 
 - Amazon Web Services S3 - Bucket for image storage
@@ -54,6 +58,13 @@ Open a new terminal within the project directory and run:
 2. Apply secret keys and configmap: `kubectl apply -f aws-secret.yaml -f env-secret.yaml -f env-configmap.yaml`
 3. Apply deployments: `kubectl apply -f backend-feed-deployment.yaml -f backend-user-deployment.yaml -f frontend-deployment.yaml -f reverseproxy-deployment.yaml`
 4. Apply services: `kubectl apply -f backend-feed-service.yaml -f backend-user-service.yaml -f frontend-service.yaml -f reverseproxy-Service.yaml`
+
+### Travis CI
+
+1. Setup environment variables for Docker Hub credentials
+2. Setup application environment variables (as above)
+3. Push latest changes to the repository
+4. Build application with Travis CI
 
 ## Acknowledgements
 
