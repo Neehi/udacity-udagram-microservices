@@ -22,7 +22,7 @@ It is recommended to use kubectl for managing the Kubernetes cluster. Intruction
 
 ### Travis CI
 
-Instructopms for installing Travis CI with a GitHub repository can be found [here](https://docs.travis-ci.com/user/tutorial/).
+Instructions for installing Travis CI with a GitHub repository can be found [here](https://docs.travis-ci.com/user/tutorial/).
 
 ## Dependencies
 
